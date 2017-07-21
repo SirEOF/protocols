@@ -488,8 +488,9 @@ class IP(ctypes.BigEndianStructure):
         '''translate str ip addess into integer.'''
         return struct.unpack("!I", socket.inet_aton(straddr))[0]
 
-    def wireshark_print(self, buf):
+    def wireshark_print(self, buf=None):
         '''output binary packet as what wireshark prints.'''
+        buf = buf if buf else self.raw
         ipinstance = self.unpack(buf)
 
         print("Internet Protocol Version %s, Src: %s, Dst: %s" % (self.ip_v, self.inet_ntoa(self.ip_src), self.inet_ntoa(self.ip_dst)))
