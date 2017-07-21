@@ -551,7 +551,7 @@ class IP(ctypes.BigEndianStructure):
 
     def __len__(self):
         '''return packet length.'''
-        return sizeof(self)
+        return ctypes.sizeof(self)
 
 
 if __name__ == '__main__':
