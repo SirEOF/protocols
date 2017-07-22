@@ -2,7 +2,7 @@
 # Licensed to GNU under a Contributor Agreement.
 
 
-"""TCP, called USER DATAGRAM PROTOCOL. Please read https://tools.ietf.org/html/rfc768 for more protocol details."""
+"""UDP, called USER DATAGRAM PROTOCOL. Please read https://tools.ietf.org/html/rfc768 for more protocol details."""
 
 
 from __future__ import print_function
