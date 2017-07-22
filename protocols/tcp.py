@@ -337,7 +337,7 @@ class TCP(ctypes.BigEndianStructure):
         self.tcp_data      = tcp_data
 
     def pack(self):
-        '''pack an ip object into binary data.'''
+        '''pack an tcp object into binary data.'''
         bindata = ctypes.string_at(ctypes.addressof(self), ctypes.sizeof(self))
         bindata += self.tcp_options
         bindata += self.tcp_data
@@ -345,7 +345,7 @@ class TCP(ctypes.BigEndianStructure):
         return bindata
 
     def unpack(self, buf):
-        '''unpack binary buf into an ip object.'''
+        '''unpack binary buf into an tcp object.'''
 
         if not isinstance(buf, bytes):
             raise Exception('unpack buffer must be a byte string.')
