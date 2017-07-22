@@ -12,7 +12,6 @@ from __future__ import absolute_import
 
 import ctypes
 import socket
-import struct
 
 
 # TCP is based on concepts first described by Cerf and Kahn in [1].  The
@@ -383,7 +382,7 @@ class TCP(ctypes.BigEndianStructure):
         print("Header Length: %d" % ((ipinstance.tcp_dataoff << 4) >> 2))
         print("Flags: 0x%02x" % ipinstance.tcp_ctrlbit)
         print("Window size: %d" % ipinstance.tcp_window)
-        print("Checksum: 0x%04x" % ipinstance.tcp_checksum)
+        print("Checksum: 0x%04x" % ipinstance.checksum())
         print("Urgent pointer: %d" % ipinstance.tcp_urgent_ptr)
 
     def checksum(self, msg=None):

@@ -12,8 +12,6 @@ from __future__ import absolute_import
 
 import ctypes
 import socket
-import struct
-
 
 # UDP provides  a procedure  for application  programs  to send
 # messages  to other programs  with a minimum  of protocol mechanism.  The
@@ -122,7 +120,7 @@ class UDP(ctypes.BigEndianStructure):
         print("Source Port: %d" % self.udp_sport)
         print("Destination Port: %d" % self.udp_dport)
         print("Length: %d" % self.udp_len)
-        print("Checksum: 0x%04x" % self.udp_checksum)
+        print("Checksum: 0x%04x" % self.checksum())
 
     def checksum(self, msg=None):
         '''sum protocol checksum'''
